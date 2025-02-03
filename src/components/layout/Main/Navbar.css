@@ -1,0 +1,33 @@
+/* Navbar.css */
+
+/* Hide the desktop menu on smaller screens */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none !important;
+  }
+  .mobile-menu-button {
+    display: block !important;
+    float: right;
+    margin-top: 16px;
+  }
+}
+
+/* Show the desktop menu on larger screens */
+@media (min-width: 769px) {
+  .mobile-menu-button {
+    display: none !important;
+  }
+  .desktop-menu {
+    display: flex;
+  }
+}
+
+/* Ensure the header doesn't overflow on small screens */
+.ant-layout-header {
+  padding: 0 20px !important;
+}
+
+/* Adjust drawer width for smaller devices */
+.ant-drawer-content {
+  max-width: 100%;
+}
