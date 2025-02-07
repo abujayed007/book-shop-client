@@ -5,6 +5,7 @@ import { adminPaths } from "./admin.routes";
 import { commonPaths } from "./common.routes";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import { userPaths } from "./user.routes";
+import ProtectedRoute from "../components/layout/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin/dashboard",
-    element: <AdminDashboard />,
+    element: (
+      <ProtectedRoute>
+        <AdminDashboard />,
+      </ProtectedRoute>
+    ),
     children: adminPaths,
   },
   {
     path: "/user/dashboard",
-    element: <UserDashboard />,
+    element: (
+      <ProtectedRoute>
+        <UserDashboard />
+      </ProtectedRoute>
+    ),
     children: userPaths,
   },
 ]);

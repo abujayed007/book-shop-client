@@ -38,6 +38,17 @@ const items = [
       </NavLink>
     ),
   },
+  {
+    key: "Orders",
+    label: (
+      <NavLink
+        to="/admin/dashboard/orders"
+        style={{ color: "white", fontWeight: "bolder", fontSize: "16px" }}
+      >
+        Orders
+      </NavLink>
+    ),
+  },
 ];
 
 const AdminDashboard = () => {

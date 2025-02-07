@@ -1,12 +1,12 @@
 import Banner from "../../components/layout/Main/Banner";
-import BookCard from "../../components/layout/Main/BookCard";
+import Books from "../books/Books";
 import Blog from "./Blog";
 
 const HomePage = () => {
   return (
     <div>
       <Banner />
-      <BookCard />
+      <Books />
       <Blog />
     </div>
   );

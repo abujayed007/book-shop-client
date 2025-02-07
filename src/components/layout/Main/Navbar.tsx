@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, Drawer, Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { IoBookOutline } from "react-icons/io5";
-import { navItems } from "../../../utils/navitems";
+import NavItems from "../../../utils/navitems";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -20,10 +21,7 @@ const Navbar = () => {
   const closeDrawer = () => setVisible(false);
 
   // Prepare the items for the Menu
-  const menuItems = navItems.map((item) => ({
-    key: item.key,
-    label: item.label,
-  }));
+  const menuItems = NavItems();
 
   return (
     <nav
@@ -48,7 +46,9 @@ const Navbar = () => {
           paddingTop: "10px",
         }}
       >
-        <IoBookOutline />
+        <NavLink to="/" style={{ color: "white" }}>
+          <IoBookOutline />
+        </NavLink>
       </div>
 
       {/* Desktop Menu */}
@@ -62,7 +62,7 @@ const Navbar = () => {
             display: "flex",
             background: "#6BA7A8",
             fontSize: "16px",
-            fontWeight: "bolder",
+            fontWeight: "bold",
           }}
           items={menuItems} // Use the `items` prop instead of `children`
         />
